@@ -5,7 +5,7 @@ import fatpack
 
 np.random.seed(10)
 
-# Generate a signal
+# Generate a signal test
 y = np.random.normal(size=100000) * 25.
 
 # Find reversals (peaks and valleys), extract cycles and residue (open cycle
