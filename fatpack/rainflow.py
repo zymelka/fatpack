@@ -182,6 +182,8 @@ def find_reversals(y, k=64):
     dz = dz1 * dz2
     revix = ix[np.argwhere(dz < 0.).ravel()+1]
     revix = np.insert(revix, (0), ix[0])
+    if len(revix) < 2: # in the case of monotonic sequence
+        return z[revix], np.array(revix)
     if (z[revix[-1]] - z[revix[-2]])*(z[ix[-1]] - z[revix[-1]]) < 0.:
         revix = np.append(revix, ix[-1])
     return z[revix], np.array(revix)
